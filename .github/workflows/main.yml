@@ -4,8 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  call_workflow_build:
+    name: Java Build
     uses: Dumas-Carvalho/devsecops-workflows/.github/workflows/build-java.yml@main
 
-  test:
+  call_workflow_test:
+    name: Java Test
+    needs: call_workflow_build
     uses: Dumas-Carvalho/devsecops-workflows/.github/workflows/test-java.yml@main
