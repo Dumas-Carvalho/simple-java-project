@@ -1,0 +1,13 @@
+name: CI/CD Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: Dumas-Carvalho/devsecops-workflows/.github/workflows/build-java.yml@main
+
+  test:
+    uses: Dumas-Carvalho/devsecops-workflows/.github/workflows/test-java.yml@main
