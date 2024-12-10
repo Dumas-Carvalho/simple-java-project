@@ -12,3 +12,8 @@ jobs:
     name: Java Test
     needs: call_workflow_build
     uses: Dumas-Carvalho/devsecops-workflows/.github/workflows/test-java.yml@main
+
+  call_workflow_deploy:
+    name: Java Deploy
+    needs: call_workflow_test
+    uses: Dumas-Carvalho/devsecops-workflows/.github/workflows/deploy-java.yml@main
